@@ -1,0 +1,150 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Precise_Content_Update"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+    x:Class="Precise_Content_Update.MainPage"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel>
+                <TextBox x:Name="SignIPAddress" Text="{Binding DisplayIPAddress}" Header="IP Address" PlaceholderText="Sign IP Address" Margin="25,10,25,0" HorizontalAlignment="Stretch" MinWidth="250"/>
+                <MenuFlyoutSeparator Margin="15,15,15,0"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="0" Grid.Column="0">
+                            <controls:NumberBox x:Name="SerialID" Value="{Binding DynamicElementID}" Header="Element ID" PlaceholderText="Dynamic ID" SpinButtonPlacementMode="Inline" SmallChange="1" LargeChange="100" Margin="25,10,0,0" MinWidth="250" Minimum="1" Maximum="65535" VerticalAlignment="Stretch"/>
+                        </Grid>
+                        <Grid Grid.Row="0" Grid.Column="1">
+                            <TextBox x:Name="Content" Text="{Binding DisplayContent, Mode=TwoWay}" Header="Content To Be Displayed" PlaceholderText="Enter text/number" Margin="25,10,0,0" HorizontalAlignment="Center" MinWidth="250" VerticalAlignment="Stretch"/>
+                        </Grid>
+                        <Grid Grid.Row="0" Grid.Column="2">
+                            <controls:NumberBox x:Name="Brightness" Value="{Binding DisplayBrightness}" Header="Brightness" PlaceholderText="Brightness" SpinButtonPlacementMode="Inline" SmallChange="1" LargeChange="10" Margin="25,10,0,0" MinWidth="250" Minimum="1" Maximum="100" VerticalAlignment="Stretch"/>
+                        </Grid>
+                        <Grid Grid.Row="0" Grid.Column="3">
+                            <ComboBox x:Name="FontCombobox" Header="Font" PlaceholderText="Content Font" Margin="25,10,0,0" SelectedIndex="5">
+                                <x:String>5x5</x:String>
+                                <x:String>6x7</x:String>
+                                <x:String>8x14</x:String>
+                                <x:String>9x11</x:String>
+                                <x:String>9x15</x:String>
+                                <x:String>9x16</x:String>
+                                <x:String>10x26</x:String>
+                                <x:String>16x24</x:String>
+                                <x:String>16x32</x:String>
+                            </ComboBox>
+                        </Grid>
+                        <Grid Grid.Row="0" Grid.Column="4">
+                            <ComboBox x:Name="AppearAnimationCombobox" Header="Appear Animation" PlaceholderText="Select Animation" Margin="25,10,0,0" SelectedIndex="0">
+                                <x:String>No Animation</x:String>
+                                <x:String>Jump In</x:String>
+                                <x:String>Move Left</x:String>
+                                <x:String>Move Right</x:String>
+                                <x:String>Move Up</x:String>
+                                <x:String>Move Down</x:String>
+                                <x:String>Drag Left</x:String>
+                                <x:String>Drag Right</x:String>
+                                <x:String>Drag Up</x:String>
+                                <x:String>Drag Down</x:String>
+                            </ComboBox>
+                        </Grid>
+                        <Grid Grid.Row="0" Grid.Column="5">
+                            <ComboBox x:Name="ClearAnimationCombobox" Header="Clear Animation" PlaceholderText="Select Animation" Margin="25,10,0,0" SelectedIndex="0">
+                                <x:String>No Animation</x:String>
+                                <x:String>Jump In</x:String>
+                                <x:String>Move Left</x:String>
+                                <x:String>Move Right</x:String>
+                                <x:String>Move Up</x:String>
+                                <x:String>Move Down</x:String>
+                                <x:String>Drag Left</x:String>
+                                <x:String>Drag Right</x:String>
+                                <x:String>Drag Up</x:String>
+                                <x:String>Drag Down</x:String>
+                            </ComboBox>
+                        </Grid>
+                        <Grid Grid.Row="0" Grid.Column="6">
+                            <ComboBox x:Name="HorizontalAlignmentCombobox" Header="Horizontal Alignment" PlaceholderText="Horizontal Alignment" Margin="25,10,0,0" SelectedIndex="0">
+                                <x:String>Default</x:String>
+                                <x:String>Center</x:String>
+                                <x:String>Left</x:String>
+                                <x:String>Right</x:String>
+                            </ComboBox>
+                        </Grid>
+                        <Grid Grid.Row="0" Grid.Column="7">
+                            <ComboBox x:Name="VerticalAlignmentCombobox" Header="Vertical Alignment" PlaceholderText="Vertical Alignment" Margin="25,10,0,0" SelectedIndex="0">
+                                <x:String>Default</x:String>
+                                <x:String>Center</x:String>
+                                <x:String>Top</x:String>
+                                <x:String>Bottom</x:String>
+                            </ComboBox>
+                        </Grid>
+                    </Grid>
+                </StackPanel>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Row="0" Grid.Column="0">
+                        <StackPanel>
+                            <TextBlock Text="Foreground Colour" Margin="25,50,0,10"/>
+                            <MenuFlyoutSeparator Margin="25,0,0,0"/>
+                            <controls:ColorPicker x:Name="FGColourPicker"
+                                ColorSpectrumShape="Ring"
+                                IsMoreButtonVisible="False"
+                                IsColorSliderVisible="True"
+                                IsColorChannelTextInputVisible="True"
+                                IsHexInputVisible="False"
+                                IsAlphaEnabled="False"
+                                IsAlphaSliderVisible="True"
+                                IsAlphaTextInputVisible="True" Margin="25,10,0,0" />
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="0" Grid.Column="1">
+                        <StackPanel>
+                            <TextBlock Text="Background Colour" Margin="25,50,0,10" HorizontalAlignment="Left"/>
+                            <MenuFlyoutSeparator Margin="25,0,0,0"/>
+                            <controls:ColorPicker x:Name="BGColourPicker"
+                                ColorSpectrumShape="Ring"
+                                IsMoreButtonVisible="False"
+                                IsColorSliderVisible="True"
+                                IsColorChannelTextInputVisible="True"
+                                IsHexInputVisible="False"
+                                IsAlphaEnabled="False"
+                                IsAlphaSliderVisible="True" Color="Black"
+                                IsAlphaTextInputVisible="True" Margin="25,10,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+                <Button Content="Send To Display" Margin="25,50,0,0" MinWidth="250" Click="Button_Click" VerticalAlignment="Stretch" HorizontalAlignment="Center" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
